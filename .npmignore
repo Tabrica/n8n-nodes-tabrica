@@ -1,0 +1,6 @@
+node_modules
+credentials/**/*.ts
+nodes/**/*.ts
+tsconfig.json
+*.tsbuildinfo
+.DS_Store

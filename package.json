@@ -1,0 +1,59 @@
+{
+  "name": "n8n-nodes-tabrica",
+  "version": "0.2.0",
+  "description": "n8n community nodes for the Tabrica Public API: records CRUD, upsert, count, filters and a polling trigger.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "tabrica",
+    "database",
+    "automation"
+  ],
+  "license": "MIT",
+  "homepage": "https://tabrica.ru",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tabrica/n8n-nodes-tabrica.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "README.ru.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-assets.js",
+    "dev": "tsc -p tsconfig.json --watch",
+    "prepack": "npm run build"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/TabricaApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Tabrica/Tabrica.node.js",
+      "dist/nodes/Tabrica/TabricaTrigger.node.js"
+    ]
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.100.0 <3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "typescript": "^5.7.2",
+    "n8n-workflow": "^2.16.0"
+  },
+  "engines": {
+    "node": ">=18.10"
+  },
+  "bugs": {
+    "url": "https://github.com/Tabrica/n8n-nodes-tabrica/issues"
+  },
+  "author": {
+    "name": "Tabrica",
+    "url": "https://tabrica.ru"
+  }
+}
